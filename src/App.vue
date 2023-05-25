@@ -7,13 +7,33 @@ import AppFooter from './components/AppFooter.vue';
 export default {
   data() {
     return {
-      name: "lol",
+      projects: [],
+      apiBaseUrl: "http://127.0.0.1:8000/api",
+      apiUrls: {
+        projects: "/projects",
+      }
     }
   },
   components: {
     AppHeader,
     AppMain,
     AppFooter
+  },
+  methods: {
+
+    getProjects() {
+
+      axios.get(this.apiBaseUrl + this.apiUrls.projects)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    },
+  },
+  created() {
+    this.getProjects()
   },
 }
 </script>
