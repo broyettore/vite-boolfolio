@@ -12,10 +12,21 @@ export default {
             </div>
             <nav>
                 <ul class="d-flex">
-                    <li class="p-2 m-2">About Me</li>
-                    <li class="p-2 m-2">Skills</li>
-                    <li class="p-2 m-2">Services</li>
-                    <li class="p-2 m-2 me-0 pe-0">Contact</li>
+                        <li class="p-2 m-2">
+                            <router-link :to="{ name: 'home' }" class="nav-link">
+                                Home
+                            </router-link>
+                        </li>
+                        <li class="p-2 m-2">
+                            <router-link :to="{ name: 'about' }" class="nav-link">
+                                About
+                            </router-link>
+                        </li>
+                        <li class="p-2 m-2 pe-0 me-0">
+                            <router-link :to="{ name: 'portfolio' }" class="nav-link">
+                                Projects
+                            </router-link>
+                        </li>
                 </ul>
             </nav>
         </div>
