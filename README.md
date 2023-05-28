@@ -10,3 +10,15 @@ Stampiamo in console i risultati e verifichiamo di ricevere i dati correttamente
 
 Milestone 5
 Creiamo un nuovo componente ProjectCard, che corrisponde ad una card per visualizzare un progetto. Utilizziamo questo componente per visualizzare tutti i progetti ricevuti tramite API.
+
+Milsestone 6
+
+Backend
+* Rotta API per il dettaglio dei vostri progetti
+
+Frontend
+* vue router
+* creazione rotte (router.js)
+* creazione pagine
+* creazione rotta parametrica e pagina di dettaglio del progetto
+* navigazione tra le pagine
