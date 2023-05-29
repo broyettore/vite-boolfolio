@@ -18,7 +18,7 @@ export default {
             axios.get(this.apiBaseUrl + this.apiUrls.projects + "/" + this.$route.params.slug)
                 .then((response) => {
                     console.log(response);
-                    this.project = response.data.results;
+                    this.project = response.data.result;
                 })
                 .catch((error) => {
                     console.log(error);
@@ -35,17 +35,17 @@ export default {
 
 
 <template>
-    <!-- <section v-if="project"> -->
+    <section v-if="project">
         <div class="container">
             <h1 class="mt-5 mb-3">{{ project.name }}</h1>
             <p>{{ project.description }}</p>
         </div>
-    <!-- </section> -->
-    <!-- <section v-if="isError">
+    </section>
+    <section v-if="isError">
         <div class="container">
             <p>{{ errorMessage }}</p>
         </div>
-    </section> -->
+    </section>
 </template>
 
 
