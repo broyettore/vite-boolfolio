@@ -8,6 +8,8 @@ export default {
     },
     data() {
         return {
+            currentPage: 1,
+            showButton: true,
             projects: [],
             apiBaseUrl: 'http://127.0.0.1:8000/api',
             apiUrls: {
@@ -18,14 +20,31 @@ export default {
     methods: {
         getProjects() {
 
-            axios.get(this.apiBaseUrl + this.apiUrls.projects)
+            axios.get(this.apiBaseUrl + this.apiUrls.projects, {
+                params: {
+                    page: this.currentPage,
+                }
+            })
                 .then((response) => {
                     console.log(response);
-                    this.projects = response.data.results;
+
+                    const results =  response.data.results.data ?? response.data.results;
+                    const moreProjects = response.data.results.next_page_url ?? null;
+
+                    this.projects = [...this.projects, ...results];
+
+                    if(!moreProjects) {
+                        this.showButton = false;
+                    }
+
                 })
                 .catch((error) => {
                     console.log(error);
                 })
+        },
+        nextPage() {
+            this.currentPage += 1;
+            this.getProjects();
         }
     },
     created() {
@@ -46,6 +65,11 @@ export default {
                     <div v-for="project in projects">
                         <AppMain :project="project" />
                     </div>
+                </div>
+                <div class="text-center my-5"  v-if="showButton" >
+                    <button class="btn btn-primary" @click.prevent="nextPage">
+                        Show more...
+                    </button>
                 </div>
             </div>
         </main>

@@ -5,6 +5,9 @@ import AppHome from './pages/AppHome.vue';
 import AboutPage from './pages/AboutPage.vue';
 import PortfolioPage from './pages/PortfolioPage.vue';
 import ProjectPage from './pages/ProjectPage.vue';
+import PageNotFound from './pages/PageNotFound.vue';
+import TypePage from './pages/TypePage.vue';
+import TechnologyPage from './pages/TechnologyPage.vue';
 
 
 const router = createRouter({
@@ -30,6 +33,21 @@ const router = createRouter({
             path: '/project/:slug',
             name: 'project',
             component: ProjectPage
+        },
+        {
+            path: '/types/:slug',
+            name: 'type',
+            component: TypePage
+        },
+        {
+            path: '/technologies/:slug',
+            name: 'technology',
+            component: TechnologyPage
+        },
+        {
+            path: '/:pathMatch(.*)*', 
+            name: 'page-not-found',
+            component: PageNotFound
         }
     ]
 });
