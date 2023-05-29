@@ -22,3 +22,18 @@ Frontend
 * creazione pagine
 * creazione rotta parametrica e pagina di dettaglio del progetto
 * navigazione tra le pagine
+
+Milestone 7
+
+Backend
+* Creazione API per risorse accessorie (tecnologie, tipologie)
+
+Frontend
+* Pagina 404
+* Pagina tipologie con Progetti relazionati
+* Pagina tecnologie con Progetti relazionati
+* Collegamento tra le varie pagine
+
+Bonus
+* Creare un sistema di paginazione dei progetti
+* Creare un file .env per la gestione dell'url API
