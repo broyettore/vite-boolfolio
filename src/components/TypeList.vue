@@ -35,7 +35,7 @@ export default {
 <template>
     <select class="form-select ms-select" v-if="types.length > 0" @change="changePage" v-model="currentType">
 
-        <option :value="type.slug" v-for="type in types"> {{ type.name }} </option>
+        <option :value="type.slug" v-for="type in types" selected> {{ type.name }} </option>
         
     </select>
 </template>

@@ -61,8 +61,8 @@ export default {
       </div>
         <main>
             <div class="container">
-                <div class="d-flex flex-wrap justify-content-center gap-2">
-                    <div v-for="project in projects">
+                <div class="row row-cols-4">
+                    <div v-for="project in projects" class="col">
                         <AppMain :project="project" />
                     </div>
                 </div>
